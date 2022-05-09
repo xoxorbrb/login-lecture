@@ -13,6 +13,7 @@
   "author": "xorb",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.20.0",
     "nodemon": "^2.0.16"
   }
 }
