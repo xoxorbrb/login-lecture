@@ -20,5 +20,15 @@ function login() {
 
     })
     .then((res) => res.json())
-    .then(console.log); // == .then((res) => console.log(res));
+    .then((res) => {
+        if(res.success) {
+            location.href = "/";
+        }
+        else {
+            alert(res.msg);
+        }
+    })
+    .catch((err) => {
+        console.error("로그인 중에 에러가 발생하였습니다."); //console.log(new Error("로그인 중에 ~~")를 쓰면 Error: 로그인 중에 에러가 발생하였습니다 출력 
+    })                                                                  // .then(console.log) == .then((res) => console.log(res));
 }
