@@ -20,9 +20,9 @@ const process = {
         const response = await user.login(); // login이 async await함수이기 때문에 Promise를 반환해주도록 되어있어, await을 적용해줄 수 있음
         return res.json(response);
     },
-    register: (req, res) => {
+    register: async(req, res) => {
         const user = new User(req.body);
-        const response = user.register();
+        const response = await user.register();
         return res.json(response);
     },
 };
