@@ -4,6 +4,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
+const dotenv = require("dotenv"); //환경변수 (개발을 팀단위로 하기 때문에 OS가 다를 수 있음 -> 동일하게 환경변수를 등록하고 가져올 수 있음)
+dotenv.config();
+
+//라우팅
 const home = require("./src/routes/home");
 
 //앱 세팅
