@@ -2,7 +2,7 @@ const { createLogger, transports,  format }=  require("winston");
 const { combine, timestamp, label ,printf, json, simple, colorize} = format; 
 
 const printFormat = printf(({timestamp, label , level ,message})=> {
-    return `${timestamp} [${label}] ${level}:  HI!! ${message}`;
+    return `${timestamp} [${label}] ${level}: ${message}`;
 });
 
 const printLogFormat = {
@@ -40,4 +40,8 @@ const logger = createLogger ({
 if (process.env.NODE_ENV !== "production") { //실제 서비스 하고 있는 서버가 아닌 경우
     logger.add(opts.console);
 }
+
+// logger.stream = {
+//     write: (message) => logger.info(message),
+// }
 module.exports = logger;
